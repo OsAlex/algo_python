@@ -13,14 +13,14 @@ m = input('Input to: ');
 if n.isdigit() and m.isdigit():
 	print('Random from ', n, ' to ', m, ' = ', random.randint(int(n),int(m)));
 
+else:
+	try:
+	    x = float(n)
+	    x = float(m)
+	except ValueError as err:
+	    x = False  
 
-try:
-    x = float(n)
-    x = float(m)
-except ValueError as err:
-    x = False  
-
-if x:
-	print('Random from ', n, ' to ', m, ' = ', random.uniform(float(n),float(m)));
-
-print('Random from ', n, ' to ', m, ' = ', chr(random.randint(ord(n), ord(m))));
+	if x:
+		print('Random from ', n, ' to ', m, ' = ', random.uniform(float(n),float(m)));
+	else:
+		print('Random from ', n, ' to ', m, ' = ', chr(random.randint(ord(n), ord(m))));
